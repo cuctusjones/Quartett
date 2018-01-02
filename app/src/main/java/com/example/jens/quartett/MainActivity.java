@@ -14,7 +14,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
-    String s;
+    String s="";
 
 
     @Override
@@ -24,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
 
-
+        //readDeck("bikes");
 
         textView.setText(readDeck("bikes").toString());
+
+        //textView.setText(s);
 
 
     }
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             deck.setDescription(obj.getString("description"));
 
             JSONArray cards = obj.getJSONArray("cards");
+
             JSONArray properties = obj.getJSONArray("properties");
 
 
@@ -55,15 +58,19 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject jcard = cards.getJSONObject(i);
                 card.setId(jcard.getInt("id"));
 
+
                 card.setName(jcard.getString("name"));
+
                 JSONArray jimages = jcard.getJSONArray("images");
                 JSONArray jvalues = jcard.getJSONArray("values");
 
-                for (int j = 0; i < jimages.length(); j++) {
+                for (int j = 0; j < jimages.length(); j++) {
 
                     JSONObject jimage = jimages.getJSONObject(j);
                     Image image = new Image(jimage.getInt("id"), jimage.getString("filename"));
+
                     images.add(image);
+                    s+= jimage.getInt("id") + jimage.getString("filename");
 
                 }
 
@@ -73,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     values.add(value);
                 }
                 card.setImages(images);
+
                 card.setValues(values);
 
 
@@ -91,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
                 propertyArrayList.add(property);
             }
+
 
             deck.setProperties(propertyArrayList);
 
