@@ -52,4 +52,18 @@ public class Card {
         this.values = values;
         this.images = images;
     }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", values=" + values +
+                ", images=" + images +
+                '}';
+    }
+
+    public Card() {
+
+    }
 }

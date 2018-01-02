@@ -8,6 +8,14 @@ public class Image {
     private int id;
     private String filename;
 
+    @Override
+    public String toString() {
+        return "Image{" +
+                "id=" + id +
+                ", filename='" + filename + '\'' +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

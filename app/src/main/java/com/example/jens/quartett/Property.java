@@ -11,6 +11,17 @@ public class Property {
     private String unit;
     private int precision;
 
+    @Override
+    public String toString() {
+        return "Property{" +
+                "text='" + text + '\'' +
+                ", compare=" + compare +
+                ", id=" + id +
+                ", unit='" + unit + '\'' +
+                ", precision=" + precision +
+                '}';
+    }
+
     public String getText() {
         return text;
     }

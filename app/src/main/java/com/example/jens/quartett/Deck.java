@@ -20,6 +20,20 @@ public class Deck {
         this.properties = properties;
     }
 
+    @Override
+    public String toString() {
+        return "Deck{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", cards=" + cards +
+                ", properties=" + properties +
+                '}';
+    }
+
+    public Deck (){
+
+    }
+
     public String getName() {
         return name;
     }

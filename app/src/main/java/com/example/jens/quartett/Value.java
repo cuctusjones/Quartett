@@ -6,8 +6,18 @@ package com.example.jens.quartett;
 
 public class Value {
 
-    private int propertyId;
     private double value;
+
+    @Override
+    public String toString() {
+        return "Value{" +
+                "value=" + value +
+                ", propertyId=" + propertyId +
+                '}';
+    }
+
+    private int propertyId;
+
 
     public int getPropertyId() {
         return propertyId;
@@ -25,7 +35,7 @@ public class Value {
         this.value = value;
     }
 
-    public Value(int propertyId, double value) {
+    public Value(double value,int propertyId) {
 
         this.propertyId = propertyId;
         this.value = value;
